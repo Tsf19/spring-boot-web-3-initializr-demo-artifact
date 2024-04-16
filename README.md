@@ -1,0 +1,1 @@
+# spring-boot-web-3-initializr-demo-artifact
