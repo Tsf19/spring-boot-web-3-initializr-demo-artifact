@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+		<!--
+		
+		The project folder/directory name doesn't necessarily have to match the <name> or <artifactId> in the pom.xml file,
+		but it's often a good practice for clarity and consistency.
+		
+		Project Directory Name: It's common to name the project directory after the <artifactId> or a simplified version of it,
+		especially if the project is a standalone project or if it's part of a multi-module project.
+		This helps maintain consistency and makes it easier to identify the project's directory.
+			
+		<name> in pom.xml: The <name> element in the pom.xml file can be a more descriptive and human-readable name for the project.
+		It can include spaces and special characters, whereas the <artifactId> typically adheres to naming conventions for file systems and URLs.
+		
+		<groupId>com.example</groupId>
+		<artifactId>my-project</artifactId>
+		<version>1.0.0</version>
+		<name>My Awesome Project</name>
+		
+	-->
+	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.4</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+	<groupId>com.example</groupId>
+	
+	<artifactId>spring-boot-web-3-initializr-demo-artifact</artifactId>
+	
+	<version>0.0.1-SNAPSHOT</version>
+	
+	<name>spring-boot-web-3-initializr-demo-artifact</name>
+	
+	<description>Description - Demo project for Spring Boot Web, Group - com.tousif, Artifact - spring-boot-web-3-initializr-demo-artifact, Name - spring-boot-web-3-initializr-demo-artifact, Package Name - com.tousif.demo, Packaging - Jar</description>
+	
+	<properties>
+		<java.version>21</java.version>
+	</properties>
+
+
+	<dependencies>
+		
+		<!-- spring-boot-starter and spring-boot-starter-web
+		
+			- The spring-boot-starter dependency includes most of the common dependencies required for a Spring Boot application,
+			  and spring-boot-starter-test is useful for writing tests
+			  
+			- However, if your application is a web application and you intend to expose endpoints via HTTP,
+			  you may need to add the spring-boot-starter-web dependency.
+			  This starter includes all the dependencies required to set up a Spring MVC application,
+			  including embedded Tomcat as the default embedded servlet container.
+		-->
+
+		<!-- Default Basic Spring Boot application Dependency -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- Default Basic Spring Boot application Dependency -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		
+		<!--Project Lombok:
+			- Lombok is a library that helps reduce boilerplate code in Java applications by providing annotations 
+			  to generate getter and setter methods, constructors, equals and hashCode methods, and more.
+			- The @Data annotation, for example, generates getters, setters, equals, hashCode, and toString methods for your classes.
+			- The provided scope means that Lombok is available during compilation but should not be included in the 
+			  final packaged artifact (JAR or WAR).
+			- The optional tag indicates that this dependency is optional and not required to compile or run the application,
+			  but it can be used if needed.-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<!--<version>1.18.30</version>-->
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
+		
+	</dependencies>
+
+		<!-- JAR (Java ARchive) or WAR (Web ARchive)
+		
+			JAR (Java ARchive):
+			- JAR packaging is commonly used for standalone applications, such as command-line tools or backend services 
+			  that don't require a web server.
+			- Spring Boot applications are often packaged as JAR files. These applications are typically self-contained and
+			  include an embedded web server (usually Tomcat, Jetty, or Undertow), allowing them to be run as standalone services.
+			- JAR files can also be made executable, meaning they can be run directly using the java -jar command.
+
+			Use JAR Packaging:
+			- For standalone applications or backend services.
+			- When deploying microservices or Spring Boot applications.
+			- When you want a self-contained executable JAR with an embedded web server.
+
+		
+			WAR (Web ARchive):
+			- WAR packaging is primarily used for web applications that are intended to be deployed to a servlet container
+			  or application server, such as Tomcat, Jetty, or JBoss.
+			- In traditional Java EE development, web applications are packaged as WAR files containing servlets,
+			  JSPs, HTML/CSS/JavaScript files, and other resources.
+			- WAR files can include multiple modules and resources, making them suitable for larger and more complex web applications.
+
+			Use WAR Packaging:
+			- For web applications that require a servlet container or application server.
+			- When building traditional Java EE applications.
+			- When deploying to environments where WAR deployment is the standard practice.
+		-->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
