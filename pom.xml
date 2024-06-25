@@ -168,49 +168,49 @@
 		First, you need to install GraalVM on your system.
 		Building the Native Executable: mvn clean package -Pnative
 		The plugin itself provides the foundation for configuring and executing native image builds within your Maven project workflow
-		
-
-	
 	 -->
 
-			<plugin>
-				<groupId>org.graalvm.buildtools</groupId>
-				<artifactId>native-maven-plugin</artifactId>
+			<!-- <plugin> -->
+				<!-- <groupId>org.graalvm.buildtools</groupId> -->
+				<!-- <artifactId>native-maven-plugin</artifactId> -->
 
 				<!-- Other configuration options go here -->
 
-				<executions> <!-- <executions> element allows you to configure how this specific plugin will be executed during the build process. It can have multiple execution elements for different scenarios.-->
+					<!-- <executions> element allows you to configure how this specific plugin will be executed during the build process. It can have multiple execution elements for different scenarios.-->
+				<!-- <executions> -->
 
-					<execution> <!-- This element defines an execution configuration for the plugin.--> 
+						<!-- This element defines an execution configuration for the plugin.--> 
+					<!-- <execution> -->
 						
-						<goals> <!-- specifies the goals/tasks that the plugin should perform. In this case, the goal is native-image, which instructs the plugin to build a native executable from your Java code using GraalVM -->
-							<goal>native-image</goal>
-						</goals>
+						<!-- <goals> --> <!-- specifies the goals/tasks that the plugin should perform. In this case, the goal is native-image, which instructs the plugin to build a native executable from your Java code using GraalVM -->
+							<!-- <goal>native-image</goal> -->
+						<!-- </goals> -->
 						
 						<!-- <phase> element determines the stage of the build lifecycle during which the plugin should be executed.
 							 Valid phases include compile, package, test, install, etc.
 							 The package phase is often suitable for generating native executables as it typically occurs after the Java code has been compiled
 						-->
 						
-						<phase>package</phase> <!-- specify the phase when you want to run the plugin e.g., package, install, etc. -->
+						<!-- specify the phase when you want to run the plugin e.g., package, install, etc. -->
+						<!-- <phase>package</phase> -->
 						<!-- This means that the native image generation will occur after compilation but before packaging the project into its final artifact. -->
 						
 						<!-- <configuration> element allows you to provide additional configuration settings specific to the plugin -->
-						<configuration>
+						<!-- <configuration> -->
 							
 							
 							<!-- <imageName> element defines the name of the native executable file that will be generated.
 								 The value uses ${project.build.finalName}, a placeholder that will be replaced with the final name of your project's JAR file during the build process.
 								 This ensures consistency in the naming between the JAR and the native executable -->
-							<imageName>${project.build.finalName}</imageName>
+							<!-- <imageName>${project.build.finalName}</imageName> -->
 							<!-- Additional configuration options can be added here -->
 						
-						</configuration>
+						<!-- </configuration> -->
 						
-					</execution>
-				</executions>
+					<!-- </execution> -->
+				<!-- </executions> -->
 
-			</plugin>
+			<!-- </plugin> -->
 			
 			
 			
