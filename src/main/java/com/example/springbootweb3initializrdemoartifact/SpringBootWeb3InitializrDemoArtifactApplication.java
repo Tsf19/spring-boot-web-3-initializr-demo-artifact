@@ -7,7 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBootWeb3InitializrDemoArtifactApplication {
 
 	public static void main(String[] args) {
+		
 		SpringApplication.run(SpringBootWeb3InitializrDemoArtifactApplication.class, args);
+		
+		System.out.println("------- Hello SpringBootWeb3Application -------");
+		
 	}
+	
 
 }
